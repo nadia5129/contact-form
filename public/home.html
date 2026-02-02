@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <link rel="icon" type="image/x-icon" href="/images/images.png">
+    <link rel="stylesheet" href="/styles/styles.css">
+
+
+</head>
+<body>
+    <h1> Contact Form</h1>
+    <form id="contact-form" method="get">
+        <fieldset>
+            <div class="field fname">
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" name="fname">
+            </div>
+
+            <div class="field lname">
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" name="lname">
+            </div>
+            
+            <div class="field title">
+            <label for="title"> Job Title: </label>
+            <input type="text" id="title" name="title">
+            </div>
+
+            <div class="field company">
+            <label for="company"> Company: </label>
+            <input type="text" id="company" name="company">
+            </div>
+
+            <div class="field lurl">
+            <label for="lurl"> LinkedIn URL: </label>
+            <input type="url" id="lurl" name="lurl">
+            </div>
+
+            <div class="field email">
+            <label for="email"> Email Address: </label>
+            <input type="email" id="email" name="email">
+            </div>
+
+            <div class="field meet">
+            <label for="meet"> How did we meet? </label>
+            <select id="meet" name="meet">
+               <option value="" disabled selected>-- Please choose --</option>
+                <option value="conference"> At a conference </option>
+                <option value="social-media"> On social media </option>
+                <option value="friend"> Through a friend </option>
+                <option value="other"> Other </option>
+            </select>
+            </div>
+
+            <div class="field other">
+            <label for="other"> Other (please specify): </label>
+            <input type="text" id="other" name="other">
+            </div>
+
+            <!-- <div class="field message">
+            <textarea id="message" name="message" rows="4" cols="50"></textarea>
+            </div> -->
+            <div class="field message">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4"></textarea>
+            </div>
+
+            <div class="field mailing">
+            <input type="checkbox" id="mailing" name="mailing">
+            <label for="mailing"> Please add me to your mailing list </label>
+            </div>
+
+            <div class="field format">
+            <span class="format-label">Choose an email format:</span>
+
+            <input type="radio" id="format-html" name="format" value="html" checked>
+            <label for="format-html">HTML</label>
+
+            <input type="radio" id="format-text" name="format" value="text">
+            <label for="format-text">Text</label>
+            </div>
+
+            <div class="field submit">
+            <button type="submit"> Submit </button>
+            </div>
+
+        </fieldset>
+    </form>
+    
+</body>
+</html>

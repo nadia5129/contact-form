@@ -1,0 +1,93 @@
+fieldset{
+   border: none;
+  margin: 0;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  grid-template-areas:
+    "fname lname title"
+    "company lurl email"
+    "meet meet other"
+    "message message message"
+    "mailing . ."
+    "format . ."
+    "submit . .";
+
+  gap: 15px;
+}
+
+.field{
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.field input{
+  padding: 5px 5px;
+  font-size: 14px;
+}
+
+ h1{
+    text-align: center;
+    margin-bottom: 20px;
+ }
+.fname { grid-area: fname; }
+
+.lname {
+    grid-area: lname;
+}
+.title {
+    grid-area: title;
+}
+.company {
+    grid-area: company;
+}
+.lurl {
+    grid-area: lurl;
+}
+.email {
+    grid-area: email;
+}
+.meet select{
+  width: 100%;
+  padding: 5px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.meet {
+    grid-area: meet;
+}
+.other {
+    grid-area: other;
+}
+.message {
+    grid-area: message;
+}
+.mailing {
+    grid-area: mailing;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+.format {
+    grid-area: format;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+.submit {
+    grid-area: submit;
+    align-items: flex-start;
+}
+
+button {
+  padding: 5px 10px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}

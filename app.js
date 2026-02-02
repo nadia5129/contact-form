@@ -12,7 +12,7 @@ app.use(express.static("public"));
 
 // Home route
 app.get("/", (req, res) => {
-  res.redirect(`/index.html`);
+  res.redirect(`/home.html`);
 });
 
 // Start server

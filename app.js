@@ -12,7 +12,7 @@ app.use(express.static("public"));
 
 // Home route
 app.get("/", (req, res) => {
-  res.redirect(`/home.html`);
+  res.sendFile(`${import.meta.dirname}/views/home.html`);
 });
 
 // Start server

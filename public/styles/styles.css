@@ -91,3 +91,9 @@ button {
   border-radius: 4px;
   cursor: pointer;
 }
+
+.err {
+  color: red;          
+  font-size: 0.85rem;   
+  margin-left: 6px;    
+}

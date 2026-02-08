@@ -6,6 +6,7 @@
     <title>Contact Form</title>
     <link rel="icon" type="image/x-icon" href="/images/images.png">
     <link rel="stylesheet" href="/styles/styles.css">
+    <script src="/js/contact-form.js" defer></script>
 
 
 </head>
@@ -14,12 +15,12 @@
     <form id="contact-form" method="get">
         <fieldset>
             <div class="field fname">
-            <label for="fname">First Name</label>
+            <label for="fname">First Name <span class="err" id="err-fname">First name is required</span></label>
             <input type="text" id="fname" name="fname">
             </div>
 
             <div class="field lname">
-            <label for="lname">Last Name</label>
+            <label for="lname">Last Name<span class="err" id="err-lname">Last name is required</span></label>
             <input type="text" id="lname" name="lname">
             </div>
             
@@ -34,17 +35,17 @@
             </div>
 
             <div class="field lurl">
-            <label for="lurl"> LinkedIn URL: </label>
-            <input type="url" id="lurl" name="lurl">
+            <label for="lurl"> LinkedIn URL:<span class="err" id="err-lurl">Please enter a valid LinkedIn URL</span></label>
+            <input type="text" id="lurl" name="lurl">
             </div>
 
             <div class="field email">
-            <label for="email"> Email Address: </label>
-            <input type="email" id="email" name="email">
+            <label for="email"> Email Address: <span class="err" id="err-email">Please enter a valid email address</span></label>
+            <input type="text" id="email" name="email">
             </div>
 
             <div class="field meet">
-            <label for="meet"> How did we meet? </label>
+            <label for="meet"> How did we meet?<span class="err" id="err-meet">Please select an option</span> </label>
             <select id="meet" name="meet">
                <option value="" disabled selected>-- Please choose --</option>
                 <option value="conference"> At a conference </option>
@@ -59,9 +60,7 @@
             <input type="text" id="other" name="other">
             </div>
 
-            <!-- <div class="field message">
-            <textarea id="message" name="message" rows="4" cols="50"></textarea>
-            </div> -->
+        
             <div class="field message">
             <label for="message">Message</label>
             <textarea id="message" name="message" rows="4"></textarea>
@@ -69,7 +68,7 @@
 
             <div class="field mailing">
             <input type="checkbox" id="mailing" name="mailing">
-            <label for="mailing"> Please add me to your mailing list </label>
+            <label for="mailing"> Please add me to your mailing list <span class="err" id="err-mailing">Email is required</span></label>
             </div>
 
             <div class="field format">

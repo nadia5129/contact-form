@@ -93,6 +93,7 @@ button {
 }
 
 .err {
+display: none;
   color: red;          
   font-size: 0.85rem;   
   margin-left: 6px;    

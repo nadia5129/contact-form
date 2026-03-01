@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <!-- Scripts-->
+    <script src="//code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="//cdn.datatables.net/2.3.7/js/dataTables.js"></script>
+      <link rel="stylesheet" href="/styles/styles.css">
+    
+
+    <!--Styles-->
+    <link rel="stylesheet" href="//cdn.datatables.net/2.3.7/css/dataTables.dataTables.css">
+</head>
+<body>
+       <%- include("partials/nav") %>
+    <main class="admin-page">
+ 
+    <h1>Contact Form Submissions</h1>
+    <% if (!contacts || contacts.length === 0) { %>
+
+  <p>No contact submissions to display.</p>
+
+<% } else { %>
+    <table id="order-table" class="display">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Title</th>
+                <th>Message</th>
+                <th>Company</th>
+                <th>LinkedIn URL</th>
+                <th>Meetup</th>
+                <th>Other Info</th>
+                <th>Timestamp</th>
+            </tr>
+        </thead>
+        <tbody>
+    <% contacts.forEach(contact => { %> 
+        <tr>
+            <td><%= contact.fname%> <%= contact.lname%></td>
+            <td><%= contact.email%></td>
+            <td><%= contact.title%></td>
+            <td><%= contact.message%></td>
+            <td><%= contact.company%></td>
+            <td><%= contact.lurl%></td>
+            <td><%= contact.meet%></td>
+            <td><%= contact.other%></td>
+            <td><%= contact.timestamp.toLocaleString() %></td>
+        </tr>
+    <% }) %>
+        </tbody>
+    </table>
+   
+      <script defer>
+        let table = new DataTable('#order-table');
+    </script>
+     <% } %>
+    </main>
+</body>
+
+</html>

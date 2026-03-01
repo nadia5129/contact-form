@@ -1,7 +1,33 @@
-fieldset{
-   border: none;
+/* CONTACT FORM    */
+
+.contact-page {
+  padding: 24px 16px;
+}
+
+.contact-page form , .contact-wrap, .admin-page {
+  max-width: 950px;
+  margin: 0 auto;
+  background: var(--surface);
+  padding: 26px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.0rem;
+  margin-bottom: 1.8rem;
+  color: var(--accent);
+  font-weight: 800;
+  letter-spacing: -0.6px;
+}
+
+
+/* Desktop: 3 columns */
+.contact-page fieldset {
+  border: none;
   margin: 0;
-  padding: 20px;
+  padding: 0;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 
@@ -10,91 +36,365 @@ fieldset{
     "company lurl email"
     "meet meet other"
     "message message message"
-    "mailing . ."
-    "format . ."
+    "mailing mailing mailing"
+    "format format format"
     "submit . .";
 
-  gap: 15px;
+  gap: 14px;
 }
 
-.field{
+.contact-page .field {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
 }
 
-.field input{
-  padding: 5px 5px;
+.contact-page label,
+.contact-page .format-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* Inputs */
+.contact-page input[type="text"],
+.contact-page select,
+.contact-page textarea {
+  padding: 10px 12px;
   font-size: 14px;
-}
-
- h1{
-    text-align: center;
-    margin-bottom: 20px;
- }
-.fname { grid-area: fname; }
-
-.lname {
-    grid-area: lname;
-}
-.title {
-    grid-area: title;
-}
-.company {
-    grid-area: company;
-}
-.lurl {
-    grid-area: lurl;
-}
-.email {
-    grid-area: email;
-}
-.meet select{
-  width: 100%;
-  padding: 5px;
-  font-size: 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
   box-sizing: border-box;
+  outline: none;
+  background: #fff;
 }
 
-.meet {
-    grid-area: meet;
-}
-.other {
-    grid-area: other;
-}
-.message {
-    grid-area: message;
-}
-.mailing {
-    grid-area: mailing;
-    flex-direction: row;
-    align-items: center;
-    gap: 10px;
-}
-.format {
-    grid-area: format;
-    flex-direction: row;
-    align-items: center;
-    gap: 10px;
-}
-.submit {
-    grid-area: submit;
-    align-items: flex-start;
+.contact-page textarea {
+  resize: vertical;
+  min-height: 110px;
 }
 
-button {
-  padding: 5px 10px;
-  font-size: 16px;
-  background-color: #4CAF50;
+/* Focus state (nice + accessible) */
+.contact-page input[type="text"]:focus,
+.contact-page select:focus,
+.contact-page textarea:focus {
+  border-color: rgba(13, 79, 60, 0.35);
+  box-shadow: 0 0 0 4px var(--accent-soft);
+}
+
+/* Grid areas */
+.contact-page .fname { grid-area: fname; }
+.contact-page .lname { grid-area: lname; }
+.contact-page .title { grid-area: title; }
+.contact-page .company { grid-area: company; }
+.contact-page .lurl { grid-area: lurl; }
+.contact-page .email { grid-area: email; }
+.contact-page .meet { grid-area: meet; }
+.contact-page .other { grid-area: other; }
+.contact-page .message { grid-area: message; }
+.contact-page .mailing { grid-area: mailing; }
+.contact-page .format { grid-area: format; }
+.contact-page .submit { grid-area: submit; }
+
+/* Checkbox + radio rows */
+.contact-page .mailing,
+.contact-page .format {
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.contact-page input[type="checkbox"],
+.contact-page input[type="radio"] {
+  width: auto;
+  margin: 0 4px 0 0;
+}
+
+/* Button */
+.contact-page button {
+  padding: 10px 14px;
+  font-size: 15px;
+  background-color: var(--accent);
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 12px;
   cursor: pointer;
+  transition: transform 0.08s ease, opacity 0.2s ease;
 }
 
-.err {
-display: none;
-  color: red;          
-  font-size: 0.85rem;   
-  margin-left: 6px;    
+.contact-page button:hover { opacity: 0.95; }
+.contact-page button:active { transform: translateY(1px); }
+
+
+.contact-page .err {
+  display: none;
+  color: #c1121f;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-left: 6px;
+}
+               
+
+@media (max-width: 900px) {
+  .contact-page form {
+    padding: 20px;
+  }
+
+  .contact-page fieldset {
+    grid-template-columns: 1fr 1fr;
+
+    grid-template-areas:
+      "fname lname"
+      "title email"
+      "company lurl"
+      "meet meet"
+      "other other"
+      "message message"
+      "mailing mailing"
+      "format format"
+      "submit submit";
+  }
+}
+
+@media (max-width: 560px) {
+  .contact-page fieldset {
+    grid-template-columns: 1fr;
+
+    grid-template-areas:
+      "fname"
+      "lname"
+      "title"
+      "company"
+      "lurl"
+      "email"
+      "meet"
+      "other"
+      "message"
+      "mailing"
+      "format"
+      "submit";
+  }
+
+  .contact-page button {
+    width: 100%;
+  }
+}
+
+
+/* ===== Global nav (works on every page) ===== */
+/* Global nav */
+nav {
+  display: flex;
+  gap: 14px;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 14px 16px;
+  max-width: 920px;
+  margin: 0 auto 12px;
+}
+
+nav a {
+  color: #0d4f3c;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+
+/* Navbar (your partial) */
+/* Resume-only nav animation */
+.resume-page nav {
+  justify-content: center;
+  gap: 28px;
+  margin-bottom: 2.25rem;
+}
+
+.resume-page nav a {
+  position: relative;
+  padding-bottom: 4px;
+  text-decoration: none;
+}
+
+.resume-page nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.25s ease;
+}
+
+.resume-page nav a:hover::after {
+  width: 100%;
+}
+
+.resume-page nav a:focus {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+/* ==================== */
+
+:root {
+  --bg: #f7f7f1;
+  --surface: #ffffff;
+  --text: #1e1e1e;
+  --muted: #6b6b6b;
+  --accent: #0d4f3c;
+  --accent-soft: rgba(13, 79, 60, 0.10);
+  --border: rgba(0, 0, 0, 0.08);
+  --radius: 16px;
+  --shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+}
+
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  letter-spacing: 0.2px;
+}
+
+/* ================================== 
+ Resume page         
+ */
+.resume-page {
+  padding: 40px 16px;
+}
+
+/* Main card */
+.resume-page main {
+  max-width: 950px;
+  margin: 0 auto;
+  background: var(--surface);
+  padding: 52px 56px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+
+/* Photo block */
+.resume-page .page-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.resume-page .circle-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
+  border: 4px solid var(--surface);
+}
+
+/* Name */
+.resume-page h1 {
+  text-align: center;
+  font-size: 2.6rem;
+  margin: 14px 0 8px;
+  color: var(--accent);
+  font-weight: 800;
+  letter-spacing: -0.6px;
+}
+
+/* Contact layout (left: phone/email, right: github/linkedin) */
+.resume-page .contact-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 18px;
+  align-items: start;
+  margin: 18px 0 10px;
+  font-size: 0.98rem;
+}
+
+.resume-page .contact-row span {
+  color: var(--text);
+}
+
+.resume-page .contact-row a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  justify-self: end;
+}
+
+.resume-page .contact-row a:hover {
+  text-decoration: underline;
+}
+
+/* Section headings */
+.resume-page h2 {
+  font-size: 1.15rem;
+  margin: 2.3rem 0 0.9rem;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+  color: var(--accent);
+  letter-spacing: 0.6px;
+  font-weight: 700;
+}
+
+/* Subheadings */
+.resume-page h3 {
+  margin: 1rem 0 0.4rem;
+  font-size: 1.02rem;
+}
+
+.resume-page h4 {
+  margin: 0.9rem 0 0.2rem;
+  font-size: 0.98rem;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+/* Paragraphs + lists */
+.resume-page p {
+  margin: 0.35rem 0;
+  color: var(--text);
+}
+
+.resume-page ul {
+  padding-left: 1.2rem;
+  margin: 0.5rem 0 0.25rem;
+}
+
+.resume-page ul.c li {
+  margin-bottom: 0.45rem;
+  list-style-type: square;
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+  .resume-page main {
+    padding: 32px 24px;
+  }
+
+  .resume-page nav {
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .resume-page .contact-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .resume-page .contact-row a {
+    justify-self: start;
+  }
+
+  .resume-page h1 {
+    font-size: 2.15rem;
+  }
 }

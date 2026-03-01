@@ -10,8 +10,12 @@
 
 
 </head>
-<body>
-    <h1> Contact Form</h1>
+<body class="contact-page">
+    <%- include("partials/nav") %>
+       <main class="contact-wrap">
+
+        <h1>Contact Form</h1>
+
     <form id="contact-form" method="post" action="/confirmation">
         <fieldset>
             <div class="field fname">
@@ -87,6 +91,7 @@
 
         </fieldset>
     </form>
+</main>
     
 </body>
 </html>

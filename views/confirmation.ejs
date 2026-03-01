@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation</title>
+</head>
+<body class="confirmation-page">
+    <%- include("partials/nav") %>
+    <main>
+        <h1>Thank you for your submission</h1>
+         <p>Name: <%= contact.fname %> <%= contact.lname %></p>
+    <p>Email: <%= contact.email %></p>
+    <p>Job Title: <%= contact.title %></p>
+    <p>Company: <%= contact.company %></p>
+    <p>Message: 
+        <%= Array.isArray(contact.message) ?
+            contact.message.join(', ') :
+            "No message" %>
+    </p>
+     
+        
+    <p>URL: <%= contact.lurl %></p>
+    <p>How did we meet: <%= contact.meet %></p>
+    <p>Other Info: <%= contact.other %></p>
+    <p>Date/Time: <%= contact.timestamp.toLocaleString() %></p>
+        <a href="/"><button type="button">Back To Home</button></a>
+    </main>
+    
+</body>
+</html>

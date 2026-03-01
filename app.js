@@ -10,6 +10,9 @@ const PORT = 3005;
 // Serve static files from public
 app.use(express.static("public"));
 
+//set up ejs as the view engine
+app.set('view engine', 'ejs');
+
 //add middleware to allow express to read data thats in the form
 app.use(express.urlencoded({extended: true}));
 
@@ -19,24 +22,27 @@ const contacts =[];
 
 // Home route
 app.get("/", (req, res) => {
-  res.sendFile(`${import.meta.dirname}/views/home.html`);
+  res.render('home');
+});
+
+// Contact form page
+app.get("/contact-form", (req, res) => {
+  res.render("contact-form");
 });
 
 //cofirmation route
 app.get('/confirmation', (req,res) => {
-  res.sendFile(`${import.meta.dirname}/views/confirmation.html`);
+  res.render('confirmation');
 });
 
 //admin route that displays order arrays
 app.get('/admin', (req, res) => {
-  res.send(contacts);
+  res.render('admin', {contacts});
 });
 
 //submit route
 app.post('/confirmation', (req,res) => {
-
   //create a json object to store order data
-
   const Newcontact={
     fname: req.body.fname,
     lname: req.body.lname,
@@ -52,7 +58,7 @@ app.post('/confirmation', (req,res) => {
 
   contacts.push(Newcontact);
 
-  res.sendFile(`${import.meta.dirname}/views/confirmation.html`)
+  res.render('confirmation', {contact: Newcontact});
 
 });
 

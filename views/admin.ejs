@@ -48,7 +48,7 @@
             <td><%= contact.lurl%></td>
             <td><%= contact.meet%></td>
             <td><%= contact.other%></td>
-            <td><%= contact.timestamp.toLocaleString() %></td>
+            <td><%= new Date(contact.created_at).toLocaleString() %></td>
         </tr>
     <% }) %>
         </tbody>

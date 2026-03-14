@@ -78,6 +78,7 @@ try{
     meet: req.body.meet,
     other: req.body.other,
     message: req.body.message,
+      timestamp: new Date()
   };
   
    const sql = `

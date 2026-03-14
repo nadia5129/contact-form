@@ -23,7 +23,7 @@
     <p>URL: <%= contact.lurl %></p>
     <p>How did we meet: <%= contact.meet %></p>
     <p>Other Info: <%= contact.other %></p>
-    <p>Date/Time: <%= contact.timestamp.toLocaleString() %></p>
+    <p>Date/Time: <%= contact.timestamp ? new Date(contact.timestamp).toLocaleString() : "Not available" %></p>
         <a href="/"><button type="button">Back To Home</button></a>
     </main>
     

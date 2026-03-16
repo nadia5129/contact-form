@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | Nadia Ivanishchuk</title>
+  <link rel="icon" href="/images/favicon.png" type="image/png">
+ <link rel="stylesheet" href="/styles/styles.css">
+</head>
+<body>
+  <%- include("partials/nav") %>
+
+  <main class="portfolio-page">
+    <section class="hero">
+      <h1>My Portfolio</h1>
+      <p>
+        This page highlights projects I built for SDEV 301 and
+        SDEV 305. These projects reflect my experience with Node.js, EJS, MySQL, and Game Boy Advance development with Butano.
+      </p>
+       <section id="projects" class="section">
+      <h2>Projects</h2>
+      <p class="muted">Grouped by development focus.</p>
+    </section>
+
+   
+
+      <!-- FORM APPLICATIONS -->
+      <section class="project-group">
+        <h3 class="group-title">Form Applications (Node / EJS)</h3>
+        <div class="grid">
+
+            <article class="card">
+            <div class="thumb">
+            <img src="/images/matcha.png" alt="Screenshot of the Matcha Cat Café website homepage with branding and reservation features" class="thumb-img">
+            </div>
+
+            <h3>Matcha Cat Café</h3>
+            <p><strong>Technologies:</strong> HTML, CSS, JavaScript, Node.js, Express, EJS</p>
+            <p><strong>My Role:</strong> Designed the café’s visual branding, developed the homepage and reservation interface, and implemented MySQL integration to store and manage reservation data.</p>
+            <p class="muted">
+              A café-themed web application featuring reservations, ordering and creating an account.
+            </p>
+            <div class="card-links">
+              <a href="http://143.198.153.190:3003/">Live Demo</a>
+              <a href="https://github.com/nadia5129/matcha-cat.git">GitHub</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb">
+            <img src="/images/pizza.png" alt="Screenshot of the Pizza App order form and user interface" class="thumb-img">
+            </div>
+
+            <h3>Pizza App</h3>
+            <p><strong>Technologies:</strong> HTML, CSS, JavaScript, Node.js, Express, EJS</p>
+            <p><strong>My Role:</strong> Developed the front-end form structure, managed backend routing with Express, and created a dynamic confirmation page using server-side rendering</p>
+            <p class="muted">
+              A pizza ordering application with dynamic form handling, Express routes, and EJS templates.
+            </p>
+
+            <div class="card-links">
+              <a href="http://143.198.153.190:3000/">Live Demo</a>
+              <a href="https://github.com/nadia5129/Pizza.git">GitHub</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb">
+            <img src="/images/vacation.png" alt="Screenshot of the Vacation Form project showing travel request form fields" class="thumb-img">
+            </div>
+
+            <h3>Vacation Form</h3>
+            <p><strong>Technologies:</strong> HTML, CSS, JavaScript, Node.js, Express, EJS</p>
+            <p><strong>My Role:</strong> Developed the user form, styled the layout, and implemented server-side logic to pass submitted data to a dynamic confirmation page</p>
+            <p class="muted">
+              A travel request form application that demonstrates routing, form processing, and user-friendly layout design.
+            </p>
+            <div class="card-links">
+              <a href="PASTE-LIVE-LINK-HERE">Live Demo</a>
+              <a href="https://github.com/nadia5129/vacation.git">GitHub</a>
+            </div>
+          </article>
+
+             <article class="card">
+            <div class="thumb">
+            <img src="/images/icecream.png" alt="Screenshot of the Ice Cream Order App showing the order form interface" class="thumb-img">
+            </div>
+
+            <h3>Ice Cream Order App</h3>
+            <p><strong>Technologies:</strong> HTML, CSS, JavaScript, Node.js, Express, EJS</p>
+            <p><strong>My Role:</strong> Created a form-based application featuring client-side validation and dynamic confirmation page rendering using EJS.</p>
+            <p class="muted">
+              A simple order form application focused on structured user input, validation, and clean presentation of submitted order details.
+            </p>
+
+            <div class="card-links">
+              <a href="PASTE-LIVE-LINK-HERE">Live Demo</a>
+              <a href="https://github.com/nadia5129/ice-cream.git">GitHub</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- GAMES -->
+      <section class="project-group">
+        <h3 class="group-title">Games (C++ / GBA)</h3>
+        <div class="grid">
+
+          <article class="card">
+            <div class="thumb">
+            <img src="/images/GIF.gif" alt="Gameplay screenshot of Duck Treasure Hunt, a Butano Game Boy Advance game" class="thumb-img">
+            </div>
+            <h3>GBA Game – Butano Duck Treasure Hunt</h3>
+            <p><strong>Technologies:</strong> C++, Butano, LibreSprite</p>
+            <p><strong>My Role:</strong> Designed custom sprite art in LibreSprite and implemented player movement logic in C++ using the Butano framework.</p>
+            <p class="muted">
+              A Game Boy Advance project showcasing custom pixel art, player movement mechanics, collision detection, and retro-inspired gameplay design.
+            </p>
+            <div class="card-links">
+              <a href="https://nadia5129.github.io/collectathon/">Play</a>
+              <a href="https://github.com/nadia5129/collectathon.git">GitHub</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb">
+            <img src="/images/demo.gif" alt="Gameplay screenshot of Kangaroo Outback, a Butano Game Boy Advance game" class="thumb-img">
+            </div>
+            <h3>GBA Game – Butano Kangaroo Outback</h3>
+            <p><strong>Technologies:</strong> C++, Butano, LibreSprite</p>
+            <p><strong>My Role:</strong> Created sprite art using LibreSprite and implemented player movement using C++ within the Butano framework.
+            </p>
+            <p class="muted">
+              A GBA game built with Butano that demonstrates game loop structure, asset integration, and gameplay mechanics.
+            </p>
+            <div class="card-links">
+              <a href="https://nadia5129.github.io/bouncers/">Play</a>
+              <a href="https://github.com/nadia5129/bouncers.git">GitHub</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb">
+            <img src="/images/orbit.gif" alt="Gameplay screenshot of Orbits, a Butano Game Boy Advance game" class="thumb-img">
+            </div>
+            <h3>GBA Game – Butano Orbits</h3>
+            <p><strong>Technologies:</strong> C++, Butano, LibreSprite</p>
+            <p><strong>My Role:</strong> Developed core gameplay logic, created visual assets in LibreSprite, and implemented player interaction mechanics using C++ within the Butano framework</p>
+            <p class="muted">
+              A retro-style microgame that features movement mechanics, pixel-art visuals, and interactive gameplay.
+            </p>
+            <div class="card-links">
+              <a href="https://nadia5129.github.io/orbits/">Play</a>
+              <a href="https://github.com/nadia5129/orbits.git">GitHub</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb">
+            <img src="/images/hot-pursuit.gif" alt="Gameplay screenshot of Hot Pursuit, a Butano Game Boy Advance chase game" class="thumb-img">
+            </div>
+            <h3>GBA Game – Butano Hot Pursuit</h3>
+            <p><strong>Technologies:</strong> C++, Butano, LibreSprite</p>
+            <p><strong>My Role:</strong> Designed a custom pixel-art player sprite and implemented chase-based gameplay mechanics in C++, allowing the character to collect cheese while avoiding pursuing enemies.</p>
+            <p class="muted">
+              A chase-style GBA game focused on player movement, enemy behavior, and pixel-art presentation.
+            </p>
+            <div class="card-links">
+              <a href="https://pdunmire-pcd.github.io/hot-pursuit/">Play</a>
+              <a href="https://github.com/pdunmire-pcd/hot-pursuit.git">GitHub</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb">
+            <img src="/images/star.gif" alt="Gameplay screenshot of Collect The Stars microgame project" class="thumb-img">
+            </div>
+            <h3>GBA Game – Collect The Stars</h3>
+            <p><strong>Technologies:</strong> C++, Butano, LibreSprite</p>
+            <p><strong>My Role:</strong> Designed the space-themed visual assets in LibreSprite and implemented player movement, animated star collection mechanics, score tracking, and enemy collision logic in C++ using the Butano framework.</p>
+            <p class="muted">
+              A Game Boy Advance microgame where the player collects animated stars while avoiding an enemy. The game features real-time score tracking, sprite animation, and collision detection within a structured game loop environment.
+            </p>
+            <div class="card-links">
+              <a href="https://pdunmire-pcd.github.io/microjam/">Play</a>
+              <a href="https://github.com/pdunmire-pcd/microjam.git">GitHub</a>
+            </div>
+          </article>
+
+        </div>
+      </section>
+    </section>
+  </main>
+<%- include("partials/footer") %>
+</body>
+</html>

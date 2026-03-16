@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Form</title>
+    <link rel="icon" href="/images/favicon.png" type="image/png">
     <link rel="icon" type="image/x-icon" href="/images/images.png">
     <link rel="stylesheet" href="/styles/styles.css">
     <script src="/js/contact-form.js" defer></script>
@@ -15,6 +16,16 @@
        <main class="contact-wrap">
 
         <h1>Contact Form</h1>
+        <% if (errors && errors.length > 0) { %>
+  <section class="error-box">
+    <h2>Please fix the following errors:</h2>
+    <ul>
+      <% errors.forEach(error => { %>
+        <li><%= error %></li>
+      <% }) %>
+    </ul>
+  </section>
+<% } %>
 
     <form id="contact-form" method="post" action="/confirmation">
         <fieldset>
@@ -92,6 +103,6 @@
         </fieldset>
     </form>
 </main>
-    
+<%- include("partials/footer") %>
 </body>
 </html>

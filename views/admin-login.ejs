@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login</title>
+  <link rel="icon" href="/images/favicon.png" type="image/png">
+  <link rel="stylesheet" href="/styles/styles.css">
+</head>
+<body class="contact-page">
+  <%- include("partials/nav") %>
+
+  <main class="contact-wrap admin-page">
+    <h1>Admin Login</h1>
+
+    <% if (error) { %>
+      <section class="error-box">
+        <p><%= error %></p>
+      </section>
+    <% } %>
+
+    <form method="post" action="/admin/login">
+      <fieldset>
+        <div class="field">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" required>
+        </div>
+
+        <div class="field">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required>
+        </div>
+
+        <div class="field submit">
+          <button type="submit">Log In</button>
+        </div>
+      </fieldset>
+    </form>
+  </main>
+
+  <%- include("partials/footer") %>
+</body>
+</html>

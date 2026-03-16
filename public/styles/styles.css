@@ -1,3 +1,16 @@
+:root {
+  --bg: #f7f7f1;
+  --surface: #ffffff;
+  --text: #1e1e1e;
+  --muted: #6b6b6b;
+  --accent: #0d4f3c;
+  --accent-soft: rgba(13, 79, 60, 0.10);
+  --border: rgba(0, 0, 0, 0.08);
+  --radius: 16px;
+  --shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+}
+
+
 /* CONTACT FORM    */
 
 .contact-page {
@@ -57,6 +70,7 @@ h1 {
 
 /* Inputs */
 .contact-page input[type="text"],
+.contact-page input[type="password"],
 .contact-page select,
 .contact-page textarea {
   padding: 10px 12px;
@@ -133,6 +147,27 @@ h1 {
   font-weight: 500;
   margin-left: 6px;
 }
+
+.error-box {
+  max-width: 950px;
+  margin: 0 auto 18px;
+  background: #fff4f4;
+  border: 1px solid #d88;
+  color: #7a1f1f;
+  padding: 16px 20px;
+  border-radius: 12px;
+}
+
+.error-box h2 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+  color: #7a1f1f;
+}
+
+.error-box ul {
+  margin: 0;
+  padding-left: 20px;
+}
                
 
 @media (max-width: 900px) {
@@ -181,7 +216,6 @@ h1 {
 }
 
 
-/* ===== Global nav (works on every page) ===== */
 /* Global nav */
 nav {
   display: flex;
@@ -203,8 +237,6 @@ nav a:hover {
   text-decoration: underline;
 }
 
-
-/* Navbar (your partial) */
 /* Resume-only nav animation */
 .resume-page nav {
   justify-content: center;
@@ -240,19 +272,6 @@ nav a:hover {
 }
 /* ==================== */
 
-:root {
-  --bg: #f7f7f1;
-  --surface: #ffffff;
-  --text: #1e1e1e;
-  --muted: #6b6b6b;
-  --accent: #0d4f3c;
-  --accent-soft: rgba(13, 79, 60, 0.10);
-  --border: rgba(0, 0, 0, 0.08);
-  --radius: 16px;
-  --shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
-}
-
-
 body {
   margin: 0;
   background: var(--bg);
@@ -263,9 +282,7 @@ body {
   letter-spacing: 0.2px;
 }
 
-/* ================================== 
- Resume page         
- */
+/* == Resume page == */
 .resume-page {
   padding: 40px 16px;
 }
@@ -279,7 +296,6 @@ body {
   border-radius: var(--radius);
   box-shadow: var(--shadow);
 }
-
 
 /* Photo block */
 .resume-page .page-center {
@@ -372,6 +388,242 @@ body {
 .resume-page ul.c li {
   margin-bottom: 0.45rem;
   list-style-type: square;
+}
+
+/* =========================
+   PORTFOLIO PAGE
+========================= */
+
+.portfolio-page {
+  padding: 40px 16px;
+}
+
+.portfolio-page .hero,
+.portfolio-page .section {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.portfolio-page .hero {
+  background: var(--surface);
+  padding: 38px 32px;
+  border-radius: 22px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+  margin-bottom: 24px;
+  text-align: center;
+  border: 1px solid rgba(13, 79, 60, 0.08);
+}
+
+.portfolio-page .hero p {
+  max-width: 760px;
+  margin: 0 auto;
+  color: var(--muted);
+}
+
+.portfolio-page h1 {
+  margin-bottom: 12px;
+}
+
+.portfolio-page h2 {
+  color: var(--accent);
+  font-size: 1.5rem;
+  margin: 0 0 6px;
+}
+
+.portfolio-page .muted {
+  color: var(--muted);
+}
+
+.portfolio-page .section {
+  margin-top: 12px;
+}
+
+.portfolio-page .project-group {
+  margin-top: 2.2rem;
+}
+
+.portfolio-page .group-title {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: var(--accent);
+  letter-spacing: 0.2px;
+}
+
+.portfolio-page .grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+
+.portfolio-page .card {
+  border: 1px solid rgba(13, 79, 60, 0.08);
+  background: var(--surface);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.portfolio-page .card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.11);
+  border-color: rgba(13, 79, 60, 0.18);
+}
+
+.portfolio-page .thumb {
+  height: 210px;
+  overflow: hidden;
+  border-radius: 14px;
+  margin: 16px 16px 0;
+  background: linear-gradient(to bottom, #eef1ec, #e8ede6);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.portfolio-page .thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: top center;
+  display: block;
+  border-radius: 14px;
+  background: #f8f8f3;
+}
+
+.portfolio-page .card h3,
+.portfolio-page .card p,
+.portfolio-page .card .card-links {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.portfolio-page .card h3 {
+  margin: 18px 0 10px;
+  color: var(--accent);
+  font-size: 1.15rem;
+  line-height: 1.25;
+}
+
+.portfolio-page .card p {
+  margin: 0 0 10px;
+}
+
+.portfolio-page .card p strong {
+  color: var(--text);
+}
+
+.portfolio-page .card .muted {
+  margin-bottom: 14px;
+}
+
+.portfolio-page .card-links {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+  padding-bottom: 24px;
+}
+
+.portfolio-page .card-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 5px 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(13, 79, 60, 0.10);
+  background: var(--accent-soft);
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 700;
+  transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+}
+
+.portfolio-page .card-links a:hover {
+  transform: translateY(-2px);
+  background: rgba(13, 79, 60, 0.14);
+  border-color: rgba(13, 79, 60, 0.18);
+  text-decoration: none;
+}
+
+.portfolio-page .card-links a:focus {
+  outline: 3px solid rgba(13, 79, 60, 0.22);
+  outline-offset: 2px;
+}
+
+@media (max-width: 900px) {
+  .portfolio-page .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-page .thumb {
+    height: 220px;
+  }
+}
+
+@media (max-width: 560px) {
+  .portfolio-page {
+    padding: 24px 12px;
+  }
+
+  .portfolio-page .hero {
+    padding: 24px 16px;
+  }
+
+  .portfolio-page .thumb {
+    height: 190px;
+    margin: 14px 14px 0;
+  }
+
+  .portfolio-page .card h3,
+  .portfolio-page .card p,
+  .portfolio-page .card .card-links {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .portfolio-page .card-links {
+    flex-direction: column;
+    align-items: stretch;
+    padding-bottom: 18px;
+  }
+
+  .portfolio-page .card-links a {
+    text-align: center;
+  }
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+  margin-top: 60px;
+  padding: 28px 16px;
+  text-align: center;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+}
+
+.footer p {
+  margin: 6px 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.footer a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer a:hover {
+  text-decoration: underline;
 }
 
 /* Responsive */
